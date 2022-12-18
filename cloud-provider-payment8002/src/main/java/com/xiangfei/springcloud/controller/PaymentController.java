@@ -68,15 +68,4 @@ public class PaymentController {
 
         return this.discoveryClient;
     }
-
-    @GetMapping("/payment/feign/timeout")
-    public String paymentFeignTimeout(){
-        try{
-            TimeUnit.SECONDS.sleep(3);
-        }catch (InterruptedException e){
-            e.printStackTrace();
-        }
-        return serverPort;
-    }
-
 }

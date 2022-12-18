@@ -3,19 +3,16 @@ package com.xiangfei.springcloud;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.ribbon.RibbonClient;
-
-import com.xiangfei.myrule.MySelfRule;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * @Author: xiangfei
- * @CreateTime: 2022/12/17 20:24
+ * @CreateTime: 2022/12/18 14:09
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-@RibbonClient(name = "CLOUD-PAYMENT-SERVICE", configuration = MySelfRule.class)
-public class OrderMain80 {
+public class PaymentMain8002 {
     public static void main(String[] args) {
-        SpringApplication.run(OrderMain80.class, args);
+        SpringApplication.run(PaymentMain8002.class, args);
     }
 }
