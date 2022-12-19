@@ -54,6 +54,11 @@ public class PaymentController {
         }
     }
 
+    @GetMapping(value = "payment/lb")
+    public String getPaymentLB(){
+        return serverPort;
+    }
+
     @GetMapping("/payment/discovery")
     public Object discovery(){
         List<String> services = discoveryClient.getServices();
