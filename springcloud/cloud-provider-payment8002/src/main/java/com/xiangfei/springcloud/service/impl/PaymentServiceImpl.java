@@ -1,10 +1,10 @@
 package com.xiangfei.springcloud.service.impl;
 
+import com.xiangfei.springcloud.entities.Payment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.xiangfei.springcloud.dao.PaymentDao;
-import com.xiangfei.springcloud.entities.Payment;
 import com.xiangfei.springcloud.service.PaymentService;
 
 /**

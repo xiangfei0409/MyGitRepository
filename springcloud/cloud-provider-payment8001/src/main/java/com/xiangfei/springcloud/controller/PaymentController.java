@@ -1,5 +1,6 @@
 package com.xiangfei.springcloud.controller;
 
+import com.xiangfei.springcloud.entities.Payment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
@@ -7,7 +8,6 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import com.xiangfei.springcloud.entities.CommonResult;
-import com.xiangfei.springcloud.entities.Payment;
 import com.xiangfei.springcloud.service.PaymentService;
 
 import lombok.extern.slf4j.Slf4j;

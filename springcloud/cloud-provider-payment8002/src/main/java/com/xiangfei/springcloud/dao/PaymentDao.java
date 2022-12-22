@@ -1,9 +1,8 @@
 package com.xiangfei.springcloud.dao;
 
+import com.xiangfei.springcloud.entities.Payment;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-
-import com.xiangfei.springcloud.entities.Payment;
 
 /**
  * @Author: xiangfei
