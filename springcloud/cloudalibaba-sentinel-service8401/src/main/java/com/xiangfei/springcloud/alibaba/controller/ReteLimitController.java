@@ -1,12 +1,13 @@
 package com.xiangfei.springcloud.alibaba.controller;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.xiangfei.springcloud.alibaba.myhandler.CustomerBlockHandler;
 import com.xiangfei.springcloud.entities.CommonResult;
 import com.xiangfei.springcloud.entities.Payment;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @Author: xiangfei
@@ -27,14 +28,15 @@ public class ReteLimitController {
 
     @GetMapping("/rateLimit/byUrl")
     @SentinelResource(value = "byUrl")
-    public CommonResult byUrl(){
+    public CommonResult byUrl() {
         return new CommonResult(200, "按url限流测试OK", new Payment(2020L, "serial002"));
     }
 
-    //CustomerBlockHandler
+    // CustomerBlockHandler
     @GetMapping("/rateLimit/customerBlockHandler")
-    @SentinelResource(value = "customerBlockHandler", blockHandlerClass = CustomerBlockHandler.class,blockHandler = "handlerException2")
-    public CommonResult customerBlockHandler(){
+    @SentinelResource(value = "customerBlockHandler", blockHandlerClass = CustomerBlockHandler.class,
+        blockHandler = "handlerException2")
+    public CommonResult customerBlockHandler() {
         return new CommonResult(200, "按客户自定义限流测试OK", new Payment(2020L, "serial003"));
     }
 }
