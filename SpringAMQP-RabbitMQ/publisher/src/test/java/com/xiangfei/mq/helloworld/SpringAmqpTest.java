@@ -7,6 +7,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @Author: xiangfei
@@ -55,5 +57,13 @@ public class SpringAmqpTest {
         String exchangeName = "itcast.topic";
         String message = "任向飞，你好！心情很好";
         rabbitTemplate.convertAndSend(exchangeName, "china.weather", message);
+    }
+
+    @Test
+    public void testSendObjectQuene(){
+        Map<String, Object> map = new HashMap<>();
+        map.put("name", "任向飞");
+        map.put("age", 22);
+        rabbitTemplate.convertAndSend("object.quene", map);
     }
 }

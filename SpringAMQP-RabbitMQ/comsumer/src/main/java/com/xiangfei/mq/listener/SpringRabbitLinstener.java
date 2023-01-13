@@ -8,6 +8,7 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalTime;
+import java.util.Map;
 
 /**
  * @Author: xiangfei
@@ -77,5 +78,10 @@ public class SpringRabbitLinstener {
     ))
     public void listenTopicQuene2(String msg) {
         System.err.println("消费者接收到的direct.quene2的消息是：【" + msg + "】" + LocalTime.now());
+    }
+
+    @RabbitListener(queues = "object.quene")
+    public void listenObjectQuene(Map<String, Object> msg) {
+        System.out.println("消费者接收到的object.quene的消息是：【" + msg + "】");
     }
 }

@@ -19,11 +19,11 @@ public class ComsumerApplication {
 
     @Bean
     public Queue objectQueue(){
-        return new Queue("simple.quene");
+        return new Queue("object.quene");
     }
 
-//    @Bean
-//    public MessageConverter messageConverter(){
-//        return new Jackson2JsonMessageConverter();
-//    }
+    @Bean
+    public MessageConverter messageConverter(){
+        return new Jackson2JsonMessageConverter();
+    }
 }
